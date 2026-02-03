@@ -4,9 +4,15 @@ import { Observable } from 'rxjs';
 
 export interface Product {
   id: number;
-  name: string;
+  title: string;
   price: number;
   description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
 @Injectable({
@@ -18,6 +24,8 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
+    console.log('hola desde service');
+
     return this.http.get<Product[]>(this.apiUrl);
   }
 }

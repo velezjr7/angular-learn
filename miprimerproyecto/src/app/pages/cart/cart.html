@@ -1,19 +1,24 @@
 <section>
   <h1>Carrito</h1>
 
-  <p *ngIf="cartStore.totalItems() === 0">Tu carrito está vacío 🛒</p>
+  @if (cartStore.totalItems() === 0) {
+    <p>Tu carrito está vacío 🛒</p>
+  }
 
-  <ul *ngIf="cartStore.totalItems() > 0">
-    <li *ngFor="let product of cartStore.cart()">
-      {{ product.title }} - ${{ product.price }}
+  @if (cartStore.totalItems() > 0) {
+    <ul>
+      @for (product of cartStore.cart(); track product.id) {
+        <li>
+          {{ product.title }} - ${{ product.price }}
+          <button (click)="cartStore.removeFromCart(product.id)">Quitar</button>
+        </li>
+      }
+    </ul>
 
-      <button (click)="cartStore.removeFromCart(product.id)">Quitar</button>
-    </li>
-  </ul>
+    <hr />
 
-  <hr *ngIf="cartStore.totalItems() > 0" />
+    <p>Total: ${{ cartStore.totalPrice() }}</p>
 
-  <p *ngIf="cartStore.totalItems() > 0">Total: ${{ cartStore.totalPrice() }}</p>
-
-  <button *ngIf="cartStore.totalItems() > 0" (click)="cartStore.clearCart()">Vaciar carrito</button>
+    <button (click)="cartStore.clearCart()">Vaciar carrito</button>
+  }
 </section>
