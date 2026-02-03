@@ -1,4 +1,10 @@
 <header>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/products">Productos</a>
+    <a routerLink="/cart">Carrito</a>
+  </nav>
+
   <h1>{{ title() }}</h1>
 
   <button (click)="changeTitle()">Cambiar Título</button>
@@ -23,3 +29,11 @@
 
   <button (click)="add(1)">Agregar 1</button>
 </header>
+<!--
+<header>
+  <h1>{{ autoTitle() }}</h1>
+  <h2>{{ manualTitle() }}</h2>
+  <p>Hora actual: {{ currentDate() | date: 'HH:mm:ss' }}</p>
+
+  <button (click)="changeTitle('Título cambiado por el usuario')">Cambiar título manual</button>
+</header> -->

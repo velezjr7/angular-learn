@@ -1,0 +1,19 @@
+<section>
+  <h1>Bienvenido a la tienda 🛍️</h1>
+
+  <p *ngIf="!hasItems()">Aún no tienes productos en el carrito</p>
+
+  <div *ngIf="hasItems()">
+    <p>
+      Productos en carrito:
+      <strong>{{ cartStore.totalItems() }}</strong>
+    </p>
+
+    <p>
+      Total a pagar:
+      <strong>${{ cartStore.totalPrice() }}</strong>
+    </p>
+
+    <a routerLink="/cart">Ir al carrito</a>
+  </div>
+</section>

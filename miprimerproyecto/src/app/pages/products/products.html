@@ -1,0 +1,13 @@
+<section>
+  <h1>Productos</h1>
+  <p *ngIf="loading()">Cargando productos...</p>
+  <div *ngIf="!loading()" class="products">
+    <div *ngFor="let product of products()" class="product-card">
+      <img [src]="product.image" width="100" />
+      <h3>{{ product.title }}</h3>
+      <p>${{ product.price }}</p>
+
+      <button (click)="addToCart(product)">Agregar al carrito</button>
+    </div>
+  </div>
+</section>

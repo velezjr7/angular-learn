@@ -1,0 +1,19 @@
+<section>
+  <h1>Carrito</h1>
+
+  <p *ngIf="cartStore.totalItems() === 0">Tu carrito está vacío 🛒</p>
+
+  <ul *ngIf="cartStore.totalItems() > 0">
+    <li *ngFor="let product of cartStore.cart()">
+      {{ product.title }} - ${{ product.price }}
+
+      <button (click)="cartStore.removeFromCart(product.id)">Quitar</button>
+    </li>
+  </ul>
+
+  <hr *ngIf="cartStore.totalItems() > 0" />
+
+  <p *ngIf="cartStore.totalItems() > 0">Total: ${{ cartStore.totalPrice() }}</p>
+
+  <button *ngIf="cartStore.totalItems() > 0" (click)="cartStore.clearCart()">Vaciar carrito</button>
+</section>
