@@ -1,0 +1,25 @@
+<header>
+  <h1>{{ title() }}</h1>
+
+  <button (click)="changeTitle()">Cambiar Título</button>
+  <input
+    #inputA
+    type="number"
+    [value]="a()"
+    (input)="a.set(+inputA.value)"
+    placeholder="Numero 1"
+  />
+  <input
+    #inputB
+    type="number"
+    [value]="b()"
+    (input)="b.set(+inputB.value)"
+    placeholder="Numero 2"
+  />
+  <p>Resultado: {{ resultado() }}</p>
+  <p>Resultado: {{ res() }}</p>
+
+  <button (click)="sumar()">Sumar {{ a() }} + {{ b() }}</button>
+
+  <button (click)="add(1)">Agregar 1</button>
+</header>
