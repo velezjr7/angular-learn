@@ -1,1 +1,13 @@
-<p>header works!</p>
+<h2>{{ contador() }}</h2>
+<button (click)="incrementar()">Incrementar</button>
+<button (click)="decrementar()">Decrementar</button>
+
+<!-- <h2>{{ resultado }}</h2>
+<input type="number" [(ngModel)]="num1" />
+<input type="number" [(ngModel)]="num2" />
+<button (click)="sumar(num1, num2)">Sumar</button> -->
+
+<input type="number" [value]="num1()" (input)="num1.set($any($event.target).value)" />
+<input type="number" [value]="num2()" (input)="num2.set($any($event.target).value)" />
+<button (click)="sumar()">Sumar</button>
+<h2>{{ resultado() }}</h2>
