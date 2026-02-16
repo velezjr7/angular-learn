@@ -1,1 +1,21 @@
-<p>estructural works!</p>
+@if (isError()) {
+  <div class="error">Mensaje de error algo salio mal</div>
+} @else {
+  <div class="content">
+    <h1>Contenido cargado exitosamente</h1>
+    <p>Este es el contenido principal de la aplicación.</p>
+  </div>
+}
+
+<button (click)="toggleError()">Alternar Estado de Error</button>
+
+@for (section of sections; track section) {
+  <div class="section">
+    @if (section.title === 'Sección Especial') {
+      <h2 class="special">{{ section.title }}</h2>
+    } @else {
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.content }}</p>
+    }
+  </div>
+}

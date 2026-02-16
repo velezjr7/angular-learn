@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-atributo',
   imports: [NgClass, NgStyle, FormsModule],
   templateUrl: './atributo.html',
-  styleUrl: './atributo.css',
+  styleUrls: ['./atributo.css', '../app.css'],
 })
 export class Atributo {
   messageType = signal<'info' | 'warning' | 'error'>('info');
