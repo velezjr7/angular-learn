@@ -14,4 +14,16 @@ export const routes: Routes = [
     path: 'nueva-compra',
     loadComponent: () => import('./compra/nueva-compra/nueva-compra').then((m) => m.NuevaCompra),
   },
+  {
+    path: 'pipes',
+    loadComponent: () => import('./pipes/pipes').then((m) => m.Pipes),
+  },
+  {
+    path: 'estructural',
+    loadComponent: () => import('./estructural/estructural').then((m) => m.Estructural),
+  },
+  {
+    path: 'atributo',
+    loadComponent: () => import('./atributo/atributo').then((m) => m.Atributo),
+  },
 ];
