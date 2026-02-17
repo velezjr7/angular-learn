@@ -10,3 +10,7 @@
   Fullname: {{ fullName() | titlecase }} <br />
 </div>
 <div class="date">Date {{ date() | date: 'longDate' }} <br /></div>
+
+<p>Estado de transacción: {{ estado() | estados }}</p>
+
+<button (click)="changeState()">Cambiar estado</button>
