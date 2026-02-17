@@ -1,0 +1,12 @@
+<div class="name">
+  Uppercase {{ name() | uppercase }} <br />
+  Lowercase
+  {{ name() | lowercase }} <br />
+  Titlecase
+  {{ name() | titlecase }} <br />
+  Slice (0,3)
+  {{ name() | slice: 0 : 3 }} <br />
+
+  Fullname: {{ fullName() | titlecase }} <br />
+</div>
+<div class="date">Date {{ date() | date: 'longDate' }} <br /></div>
