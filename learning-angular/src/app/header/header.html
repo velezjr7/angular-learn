@@ -16,13 +16,14 @@
   <ul>
     <li>
       <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        >Historial</a
+        >Home</a
       >
     </li>
-    <li><a [routerLink]="['/listado']" routerLinkActive="active">Listado</a></li>
-    <li><a [routerLink]="['/nueva-compra']" routerLinkActive="active">Nueva Compra</a></li>
+    <li><a [routerLink]="['/compras/nueva-compra']" routerLinkActive="active">Nueva Compra</a></li>
+    <li><a [routerLink]="['/compras/historial']" routerLinkActive="active">Historial</a></li>
+    <li><a [routerLink]="['/directivas/estructural']" routerLinkActive="active">Estructural</a></li>
+    <li><a [routerLink]="['/directivas/atributo']" routerLinkActive="active">Atributo</a></li>
     <li><a [routerLink]="['/pipes']" routerLinkActive="active">Pipes</a></li>
-    <li><a [routerLink]="['/estructural']" routerLinkActive="active">Estructural</a></li>
-    <li><a [routerLink]="['/atributo']" routerLinkActive="active">Atributo</a></li>
+    <li><a [routerLink]="['/listado']" routerLinkActive="active">Listado</a></li>
   </ul>
 </nav>
