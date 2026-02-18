@@ -11,4 +11,8 @@ import { Footer } from './footer/footer';
 })
 export class App {
   protected readonly title = signal('learning-angular');
+
+  constructor() {
+    localStorage.setItem('id', '1234');
+  }
 }
