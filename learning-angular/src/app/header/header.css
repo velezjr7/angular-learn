@@ -1,0 +1,31 @@
+nav ul {
+  list-style: none; /* quitar viñetas */
+  margin: 0;
+  padding: 0;
+  display: flex; /* enlaces en línea */
+  gap: 1.5rem; /* espacio entre enlaces */
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #ecf0f1; /* texto claro */
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+  padding-bottom: 0.2rem;
+}
+
+nav ul li a:hover {
+  color: #1abc9c; /* color al pasar el mouse */
+  border-bottom: 2px solid #1abc9c; /* subrayado elegante */
+}
+
+nav ul li a.active {
+  color: #f39c12; /* color para el enlace activo */
+  border-bottom: 2px solid #f39c12;
+}

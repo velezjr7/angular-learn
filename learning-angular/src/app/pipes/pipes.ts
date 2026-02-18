@@ -1,10 +1,19 @@
 import { Component, signal } from '@angular/core';
 import { UpperCasePipe, LowerCasePipe, TitleCasePipe, SlicePipe, DatePipe } from '@angular/common';
 import { EstadosPipe } from './estados-pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pipes',
-  imports: [UpperCasePipe, LowerCasePipe, TitleCasePipe, SlicePipe, DatePipe, EstadosPipe],
+  imports: [
+    UpperCasePipe,
+    LowerCasePipe,
+    TitleCasePipe,
+    SlicePipe,
+    DatePipe,
+    EstadosPipe,
+    RouterLink,
+  ],
   templateUrl: './pipes.html',
   styleUrl: './pipes.css',
 })

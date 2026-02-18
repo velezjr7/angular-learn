@@ -11,3 +11,18 @@
 <input type="number" [value]="num2()" (input)="num2.set($any($event.target).value)" />
 <button (click)="sumar()">Sumar</button>
 <h2>{{ resultado() }}</h2>
+
+<nav>
+  <ul>
+    <li>
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        >Historial</a
+      >
+    </li>
+    <li><a [routerLink]="['/listado']" routerLinkActive="active">Listado</a></li>
+    <li><a [routerLink]="['/nueva-compra']" routerLinkActive="active">Nueva Compra</a></li>
+    <li><a [routerLink]="['/pipes']" routerLinkActive="active">Pipes</a></li>
+    <li><a [routerLink]="['/estructural']" routerLinkActive="active">Estructural</a></li>
+    <li><a [routerLink]="['/atributo']" routerLinkActive="active">Atributo</a></li>
+  </ul>
+</nav>

@@ -1,9 +1,10 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   standalone: true,
   templateUrl: './header.html',
   styleUrl: './header.css',
