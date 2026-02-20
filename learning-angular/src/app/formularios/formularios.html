@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <div>
+    <input type="text" placeholder="Nombre" formControlName="name" />
+    Valor: {{ form.get('name')?.value }}
+  </div>
+  <div><input type="checkbox" formControlName="isChecked" />{{ form.get('isChecked')?.value }}</div>
+  <div>
+    <input type="email" placeholder="Email" formControlName="email" /> Valor:
+    {{ form.get('email')?.value }}
+  </div>
+
+  <button [disabled]="!form.valid">Enviar</button>
+</form>

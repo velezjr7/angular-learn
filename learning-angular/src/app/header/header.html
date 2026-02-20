@@ -1,16 +1,16 @@
-<h2>{{ contador() }}</h2>
+<!-- <h2>{{ contador() }}</h2>
 <button (click)="incrementar()">Incrementar</button>
-<button (click)="decrementar()">Decrementar</button>
+<button (click)="decrementar()">Decrementar</button> -->
 
 <!-- <h2>{{ resultado }}</h2>
 <input type="number" [(ngModel)]="num1" />
 <input type="number" [(ngModel)]="num2" />
 <button (click)="sumar(num1, num2)">Sumar</button> -->
 
-<input type="number" [value]="num1()" (input)="num1.set($any($event.target).value)" />
+<!-- <input type="number" [value]="num1()" (input)="num1.set($any($event.target).value)" />
 <input type="number" [value]="num2()" (input)="num2.set($any($event.target).value)" />
 <button (click)="sumar()">Sumar</button>
-<h2>{{ resultado() }}</h2>
+<h2>{{ resultado() }}</h2> -->
 
 <nav>
   <ul>
@@ -20,10 +20,16 @@
       >
     </li>
     <li><a [routerLink]="['/compras/nueva-compra']" routerLinkActive="active">Nueva Compra</a></li>
-    <li><a [routerLink]="['/compras/historial']" routerLinkActive="active">Historial</a></li>
+    <li>
+      <a [routerLink]="['/compras/historial']" routerLinkActive="active">Historial Compras</a>
+    </li>
+    <li><a [routerLink]="['/compras/listado']" routerLinkActive="active">Listado Compras</a></li>
+    <li><a [routerLink]="['/ventas/listado']" routerLinkActive="active">Listado Ventas</a></li>
+    <li><a [routerLink]="['/ventas/nueva-venta']" routerLinkActive="active">Nueva Venta</a></li>
+    <li><a [routerLink]="['/ventas/historial']" routerLinkActive="active">Historial Ventas</a></li>
     <li><a [routerLink]="['/directivas/estructural']" routerLinkActive="active">Estructural</a></li>
     <li><a [routerLink]="['/directivas/atributo']" routerLinkActive="active">Atributo</a></li>
+    <li><a [routerLink]="['/formularios']" routerLinkActive="active">Formularios</a></li>
     <li><a [routerLink]="['/pipes']" routerLinkActive="active">Pipes</a></li>
-    <li><a [routerLink]="['/listado']" routerLinkActive="active">Listado</a></li>
   </ul>
 </nav>
