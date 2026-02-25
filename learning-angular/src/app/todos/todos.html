@@ -1,0 +1,17 @@
+<h2>Lista de todos</h2>
+
+@if (loading()) {
+  <p>Cargando...</p>
+} @else if (error()) {
+  <p>Error al cargar los todos</p>
+} @else {
+  @for (todo of todos(); track todo.id) {
+    <p>
+      @if (todo.completed) {
+        ✅ {{ todo.title }}
+      } @else {
+        ❌ {{ todo.title }}
+      }
+    </p>
+  }
+}

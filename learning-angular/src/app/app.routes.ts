@@ -66,4 +66,8 @@ export const routes: Routes = [
     path: 'pipes',
     loadComponent: () => import('./pipes/pipes').then((m) => m.Pipes),
   },
+  {
+    path: 'todos',
+    loadComponent: () => import('./todos/todos').then((m) => m.Todos),
+  },
 ];

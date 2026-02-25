@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Product {
@@ -21,7 +21,9 @@ export interface Product {
 export class ProductsService {
   private apiUrl = 'https://fakestoreapi.com/products';
 
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+
+  getProducts$ = this.http.get<Product[]>(this.apiUrl);
 
   getProducts(): Observable<Product[]> {
     console.log('hola desde service');

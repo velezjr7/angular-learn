@@ -17,7 +17,7 @@ export class Products {
     private productsService: ProductsService,
     private cartStore: CartStore,
   ) {
-    this.productsService.getProducts().subscribe({
+    this.productsService.getProducts$.subscribe({
       next: (data) => {
         this.products.set(data);
         this.loading.set(false);
