@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-formularios',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, JsonPipe],
   templateUrl: './formularios.html',
   styleUrl: './formularios.css',
 })
-export class Formularios implements OnInit {
-  form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    isChecked: new FormControl(false),
-    email: new FormControl('', [Validators.required, Validators.email]),
+export class Formularios {
+  private fb = inject(NonNullableFormBuilder);
+  form = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
   });
 
-  ngOnInit(): void {
-    // this.name.setValue('John');
+  onSubmit() {
+    if (this.form.valid) {
+      console.log('Form Submitted', this.form.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

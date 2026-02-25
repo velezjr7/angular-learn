@@ -1,13 +1,44 @@
-<form [formGroup]="form">
+<!-- <form [formGroup]="form">
   <div>
     <input type="text" placeholder="Nombre" formControlName="name" />
     Valor: {{ form.get('name')?.value }}
+    <pre> <code>{{ form.value | json }}</code></pre>
   </div>
+
   <div><input type="checkbox" formControlName="isChecked" />{{ form.get('isChecked')?.value }}</div>
+
   <div>
     <input type="email" placeholder="Email" formControlName="email" /> Valor:
     {{ form.get('email')?.value }}
   </div>
 
   <button [disabled]="!form.valid">Enviar</button>
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <input type="text" placeholder="Nombre" formControlName="name" />
+    Valor: {{ form.get('name')?.value }}
+    <pre><code>{{ form.value | json }}</code></pre>
+
+    @if (form.get('name')?.invalid && form.get('name')?.touched) {
+      <p style="color: red">El nombre es obligatorio</p>
+    }
+  </div>
+
+  <div>
+    <input type="checkbox" formControlName="isChecked" />
+    {{ form.get('isChecked')?.value }}
+  </div>
+
+  <div>
+    <input type="email" placeholder="Email" formControlName="email" />
+    Valor: {{ form.get('email')?.value }}
+
+    @if (form.get('email')?.invalid && form.get('email')?.touched) {
+      <p style="color: red">Debe ser un email válido</p>
+    }
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Enviar</button>
 </form>
