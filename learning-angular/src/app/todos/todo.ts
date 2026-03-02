@@ -31,7 +31,6 @@ export class TodoService {
   //   initialValue: [],
   // });
 
-  //combinar rxjs con signal
   //rxjs
   // todos$ = this.http.get<Obj[]>('https://jsonplaceholder.typicode.com/todos');
   //signal

@@ -1,13 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { TodoService } from './todo';
-import { AsyncPipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './todos.html',
   styleUrl: './todos.css',
 })
