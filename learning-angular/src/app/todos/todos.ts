@@ -34,4 +34,10 @@ export class Todos {
       this.todoComments.set(comments);
     });
   }
+
+  constructor() {
+    this.todosService.getPosts().subscribe((response) => {
+      console.log('Response from POST request:', response);
+    });
+  }
 }

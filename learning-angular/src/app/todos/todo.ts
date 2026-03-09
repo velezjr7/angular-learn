@@ -37,6 +37,15 @@ export class TodoService {
       }),
     );
   }
+
+  getPosts() {
+    const body = {
+      id: 1,
+      comment: 'hola',
+      date: '2024-06-01',
+    };
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', body);
+  }
   // manera moderna de hacerlo con signal
   // todos = toSignal(this.http.get<Obj[]>('https://jsonplaceholder.typicode.com/todos'), {
   //   initialValue: [],
