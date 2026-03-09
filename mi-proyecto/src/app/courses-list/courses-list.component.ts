@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseCardComponent } from '../course-card/course-card.component';
+import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-courses-list',
@@ -9,9 +10,9 @@ import { CourseCardComponent } from '../course-card/course-card.component';
 })
 export class CoursesListComponent implements OnInit {
   title: string = 'Available courses';
-  wishlist: any[] = [];
+  wishlist: Course[] = [];
 
-  courses = [
+  courses: Course[] = [
     {
       id: 1,
       title: 'Intro to Angular',
@@ -48,11 +49,11 @@ export class CoursesListComponent implements OnInit {
     console.log('Aquí ando pa desde courses-list');
   }
 
-  onCourseBooked(course: any): void {
+  onCourseBooked(course: Course): void {
     console.log(`Course booked: ${course.title}`);
   }
 
-  onAddToWishlist(course: any): void {
+  onAddToWishlist(course: Course): void {
     console.log(`Course added to wishlist: ${course.title}`);
     this.wishlist.push(course);
   }
