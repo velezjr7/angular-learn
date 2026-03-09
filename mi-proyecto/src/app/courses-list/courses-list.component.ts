@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgStyle } from '@angular/common';
+import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle],
+  imports: [NgStyle, DatePipe, CurrencyPipe],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })
@@ -19,6 +19,7 @@ export class CoursesListComponent implements OnInit {
       date: '2025-03-01',
       soldOut: false,
       img: 'angular-logo.png',
+      onSale: false,
     },
     {
       id: 2,
@@ -28,6 +29,17 @@ export class CoursesListComponent implements OnInit {
       date: '2025-03-01',
       soldOut: true,
       img: 'angular-logo.png',
+      onSale: true,
+    },
+    {
+      id: 3,
+      title: 'RxJS Fundamentals',
+      description: 'Learn the fundamentals of RxJS for reactive programming',
+      price: 45,
+      date: '2025-03-01',
+      soldOut: false,
+      img: 'rxjs-logo.png',
+      onSale: true,
     },
   ];
 

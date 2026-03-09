@@ -19,8 +19,8 @@
   <div class="course-item">
     <h3>{{ course.title }}</h3>
     <p>{{ course.description }}</p>
-    <p>{{ course.price }}</p>
-    <p>{{ course.date }}</p>
+    <p>{{ course.price | currency: "USD" }}</p>
+    <p>{{ course.date | date: "longDate" }}</p>
     <p [hidden]="!course.soldOut">Sold Out</p>
     <img
       [ngStyle]="{ border: course.soldOut ? '2px solid red' : 'none' }"
@@ -28,6 +28,12 @@
       [alt]="course.title"
       width="100"
     />
+    @if (course.price < 50) {
+      <div class="special-offer">Special offer!!</div>
+    }
+    @if (course.onSale) {
+      <div class="sale">On Sale!!</div>
+    }
     <button (click)="viewDetails(course.title)">View details</button>
   </div>
 }

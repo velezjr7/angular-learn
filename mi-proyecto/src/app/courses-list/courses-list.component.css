@@ -4,12 +4,30 @@
   border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
+  width: 300px;
 }
 
 h3 {
   margin: 0 0 0.5rem 0;
 }
 
+.special-offer {
+  background-color: #ffeb3b;
+  color: #333;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.sale {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
 button {
   background-color: #007bff;
   color: white;
