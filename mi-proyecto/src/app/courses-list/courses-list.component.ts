@@ -9,6 +9,7 @@ import { CourseCardComponent } from '../course-card/course-card.component';
 })
 export class CoursesListComponent implements OnInit {
   title: string = 'Available courses';
+  wishlist: any[] = [];
 
   courses = [
     {
@@ -49,5 +50,10 @@ export class CoursesListComponent implements OnInit {
 
   onCourseBooked(course: any): void {
     console.log(`Course booked: ${course.title}`);
+  }
+
+  onAddToWishlist(course: any): void {
+    console.log(`Course added to wishlist: ${course.title}`);
+    this.wishlist.push(course);
   }
 }

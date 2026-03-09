@@ -1,23 +1,18 @@
 <h2>{{ title }}</h2>
 
-<!-- <div class="course-item">
-  <h3>Introduction to Angular</h3>
-  <p>Learn angular in this course.</p>
-  <p>100</p>
-  <p>09/03/2026</p>
-  <button>View details</button>
-</div>
-<div class="course-item">
-  <h3>Advanced to Angular</h3>
-  <p>Take your Angular skills to the next level.</p>
-  <p>100</p>
-  <p>09/03/2026</p>
-  <button>View details</button>
-</div> -->
+@if (wishlist.length > 0) {
+  <span class="wishlist-banner"
+    >❤️ My Wishlist:
+    @for (course of wishlist; track course.title) {
+      <span class="wishlist-item">{{ course.title }}</span>
+    }
+  </span>
+}
 
 @for (course of courses; track course.id) {
   <app-course-card
     [course]="course"
     (courseBooked)="onCourseBooked($event)"
+    (addToWishlist)="onAddToWishlist($event)"
   ></app-course-card>
 }
