@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { TodoService, Obj } from './todo';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of, tap } from 'rxjs';
@@ -10,7 +10,7 @@ import { catchError, of, tap } from 'rxjs';
   templateUrl: './todos.html',
   styleUrl: './todos.css',
 })
-export class Todos {
+export class Todos implements OnInit {
   private todosService = inject(TodoService);
 
   loading = signal(true);
@@ -36,8 +36,16 @@ export class Todos {
   }
 
   constructor() {
+    this.todosService.getPosts().subscribe((response) => {});
+  }
+
+  ngOnInit() {
     this.todosService.getPosts().subscribe((response) => {
-      console.log('Response from POST request:', response);
+      console.log('nueva', response);
     });
+  }
+
+  updatePost() {
+    this.todosService.postSource.next('Nuevo post creado');
   }
 }

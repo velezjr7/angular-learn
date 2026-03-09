@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { inject } from '@angular/core/primitives/di';
 import { HttpClient } from '@angular/common/http';
 // import { toSignal } from '@angular/core/rxjs-interop';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, Observable, of, Subject } from 'rxjs';
 export interface Obj {
   userId: string;
   id: number;
@@ -13,6 +13,10 @@ export interface Obj {
   providedIn: 'root',
 })
 export class TodoService {
+  postSource = new Subject();
+
+  posts$ = this.postSource.asObservable();
+
   private readonly apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
   private readonly commentsUrl = 'https://jsonplaceholder.typicode.com/comments';
