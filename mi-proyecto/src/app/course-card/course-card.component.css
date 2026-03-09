@@ -1,0 +1,26 @@
+.course-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 300px;
+}
+
+.special-offer {
+  background-color: #ffeb3b;
+  color: #333;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.sale {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
+import { CourseCardComponent } from '../course-card/course-card.component';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle, DatePipe, CurrencyPipe],
+  imports: [CourseCardComponent],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })
@@ -45,9 +45,5 @@ export class CoursesListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Aquí ando pa desde courses-list');
-  }
-
-  viewDetails(title: string): void {
-    alert(`Viewing details for ${title}`);
   }
 }

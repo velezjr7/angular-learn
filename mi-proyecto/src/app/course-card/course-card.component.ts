@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-course-card',
-  imports: [],
+  imports: [NgStyle, DatePipe, CurrencyPipe],
   templateUrl: './course-card.component.html',
-  styleUrl: './course-card.component.css'
+  styleUrl: './course-card.component.css',
 })
 export class CourseCardComponent {
+  @Input() course: any;
 
+  viewDetails(title: string): void {
+    alert(`Viewing details for ${title}`);
+  }
 }
