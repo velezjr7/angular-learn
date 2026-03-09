@@ -15,6 +15,8 @@ export interface Obj {
 export class TodoService {
   private readonly apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
+  private readonly commentsUrl = 'https://jsonplaceholder.typicode.com/comments';
+
   private http = inject(HttpClient);
 
   //manera para hacerlo para un proyecto real
@@ -22,6 +24,15 @@ export class TodoService {
     return this.http.get<Obj[]>(this.apiUrl).pipe(
       catchError((err) => {
         console.error('Error cargando todos', err);
+        return of([]);
+      }),
+    );
+  }
+
+  getComments(postId: number): Observable<Obj[]> {
+    return this.http.get<Obj[]>(`${this.commentsUrl}?postId=${postId}`).pipe(
+      catchError((err) => {
+        console.error('Error cargando comments', err);
         return of([]);
       }),
     );

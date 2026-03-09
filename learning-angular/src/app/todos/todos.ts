@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { TodoService } from './todo';
+import { TodoService, Obj } from './todo';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of, tap } from 'rxjs';
 
@@ -27,4 +27,11 @@ export class Todos {
     ),
     { initialValue: [] },
   );
+
+  todoComments = signal<Obj[]>([]);
+  loadComments(postId: number) {
+    this.todosService.getComments(postId).subscribe((comments) => {
+      this.todoComments.set(comments);
+    });
+  }
 }
