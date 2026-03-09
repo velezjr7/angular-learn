@@ -46,4 +46,8 @@ export class CoursesListComponent implements OnInit {
   ngOnInit(): void {
     console.log('Aquí ando pa desde courses-list');
   }
+
+  onCourseBooked(course: any): void {
+    console.log(`Course booked: ${course.title}`);
+  }
 }

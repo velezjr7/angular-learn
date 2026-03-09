@@ -17,5 +17,5 @@
   @if (course.onSale) {
     <div class="sale">On Sale!!</div>
   }
-  <button (click)="viewDetails(course.title)">View details</button>
+  <button [disabled]="course.soldOut" (click)="onBookCourse()">Book Course</button>
 </div>
