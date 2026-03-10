@@ -6,8 +6,8 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { CourseService } from '../services/course.service';
-import { Course } from '../models/course.model';
+import { CourseService } from '../../../services/course.service';
+import { Course } from '../../../models/course.model';
 
 @Component({
   selector: 'app-add-new-course',

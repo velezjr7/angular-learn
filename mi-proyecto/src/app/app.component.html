@@ -18,7 +18,13 @@
     >About</a
   >
   <a
-    routerLink="/add-course"
+    routerLink="/admin/students"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Student List</a
+  >
+  <a
+    routerLink="/admin/add-course"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
     >Add Course</a

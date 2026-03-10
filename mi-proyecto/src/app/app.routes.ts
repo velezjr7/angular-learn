@@ -29,10 +29,8 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'add-course',
-    loadComponent: () =>
-      import('./add-new-course/add-new-course.component').then(
-        (m) => m.AddNewCourseComponent,
-      ),
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin.module').then((m) => m.AdminModule),
   },
 ];
