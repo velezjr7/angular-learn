@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../../app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: DashboardComponent,
     children: [
       {
         path: 'add-course',
@@ -21,6 +21,7 @@ const routes: Routes = [
             (m) => m.StudentListComponent,
           ),
       },
+      { path: '', redirectTo: 'students', pathMatch: 'full' },
     ],
   },
 ];
