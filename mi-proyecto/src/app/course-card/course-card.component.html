@@ -17,6 +17,7 @@
   @if (course.onSale) {
     <div class="sale">On Sale!!</div>
   }
+  <button (click)="goToDetails(course.id)">See details</button>
   <button (click)="onAddToWishlistClick()">Add to Wishlist</button>
   <button [disabled]="course.soldOut" (click)="onBookCourse()">
     Book Course

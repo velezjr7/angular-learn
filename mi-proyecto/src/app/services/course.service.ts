@@ -1,46 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../models/course.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  private courses: Course[] = [
-    {
-      id: 1,
-      title: 'Intro to Angular',
-      description: 'Learn the basics of Angular framework',
-      price: 49,
-      date: '2025-03-01',
-      soldOut: false,
-      img: 'angular-logo.png',
-      onSale: false,
-    },
-    {
-      id: 2,
-      title: 'Advanced to Angular',
-      description: 'Take your Angular skills to the next level',
-      price: 79,
-      date: '2025-03-01',
-      soldOut: true,
-      img: 'angular-logo.png',
-      onSale: true,
-    },
-    {
-      id: 3,
-      title: 'RxJS Fundamentals',
-      description: 'Learn the fundamentals of RxJS for reactive programming',
-      price: 45,
-      date: '2025-03-01',
-      soldOut: false,
-      img: 'rxjs-logo.png',
-      onSale: true,
-    },
-  ];
+  private baseUrl = 'http://localhost:3000';
 
-  constructor() {}
+  private selectedCourse: Course | null = null;
 
-  getCourses(): Course[] {
-    return this.courses;
+  constructor(private http: HttpClient) {}
+
+  getCourses(description?: string): Observable<Course[]> {
+    let url = `${this.baseUrl}/courses`;
+    if (description) {
+      url += `?description_like=${encodeURIComponent(description)}`;
+    }
+    return this.http.get<Course[]>(url);
+  }
+
+  getCourseById(id: number): Observable<Course> {
+    return this.http.get<Course>(`${this.baseUrl}/courses/${id}`);
+  }
+
+  addCourse(course: Course): Observable<Course> {
+    return this.http.post<Course>(`${this.baseUrl}/courses`, course);
   }
 }

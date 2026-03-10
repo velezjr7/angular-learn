@@ -1,2 +1,15 @@
-<app-courses-list></app-courses-list>
+<nav>
+  <a
+    routerLink="/courses"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Courses</a
+  >
+  <a
+    routerLink="/about"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >About</a
+  >
+</nav>
 <router-outlet></router-outlet>
