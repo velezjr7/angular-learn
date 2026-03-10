@@ -28,4 +28,11 @@ export const routes: Routes = [
         (m) => m.SignUpFormComponent,
       ),
   },
+  {
+    path: 'add-course',
+    loadComponent: () =>
+      import('./add-new-course/add-new-course.component').then(
+        (m) => m.AddNewCourseComponent,
+      ),
+  },
 ];

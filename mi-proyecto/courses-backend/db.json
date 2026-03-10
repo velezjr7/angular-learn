@@ -27,6 +27,16 @@
       "date": "2025-05-05",
       "img": "rxjs-logo.png",
       "soldOut": false
+    },
+    {
+      "id": 1773107972996,
+      "title": "asad",
+      "description": "asdsadasdasdasdas",
+      "price": 50,
+      "date": "2020-12-02",
+      "img": "asdasdasdas",
+      "onSale": true,
+      "soldOut": false
     }
   ],
   "students": [
